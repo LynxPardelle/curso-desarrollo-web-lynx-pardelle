@@ -387,4 +387,41 @@
       >
     </p>
   </section>
+  <section class="bef bef-mb-1rem">
+    <h2 class="bef bef-mb-1rem">Plan del proyecto de Blog Genérico</h2>
+    @if (plan.metas) { @for (meta of plan.metas; track meta.title) {
+    <article>
+      <h3 class="bef bef-mb-0_75rem">{{ meta.title }}</h3>
+      <h4>Características</h4>
+      @if (meta.caracteristicas) {
+      <ul>
+        @for (caracteristica of meta.caracteristicas; track caracteristica) {
+        <li>{{ caracteristica.caracteristica }}</li>
+        }
+      </ul>
+      }
+      <h4 class="bef bef-mb-0">Objetivos</h4>
+      @if (meta.objetivos) {
+      <ul>
+        @for (objetivo of meta.objetivos; track objetivo) {
+        <li>
+          <h5 class="bef bef-fs-1rem bef-mb-0">{{ objetivo.objetivo }}</h5>
+          <ul>
+            @for (tarea of objetivo.tareas; track tarea) {
+            <li>
+              <h6 class="bef bef-fs-1rem bef-mb-0">{{ tarea.tarea }}</h6>
+              <ul>
+                <li>Realizado: {{ tarea.hecho ? "Si" : "No" }}</li>
+                <li>Etapa: {{ tarea.etapa }}</li>
+              </ul>
+            </li>
+            }
+          </ul>
+        </li>
+        }
+      </ul>
+      }
+    </article>
+    } }
+  </section>
 </main>
