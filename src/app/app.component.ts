@@ -109,8 +109,8 @@ export class AppComponent {
             tareas: [
               {
                 tarea: 'Crear el repositorio',
-                hecho: false,
-                etapa: 'no empezado',
+                hecho: true,
+                etapa: 'acabado',
               },
               {
                 tarea:
